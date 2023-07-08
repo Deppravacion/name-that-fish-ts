@@ -1,11 +1,12 @@
 import "./styles/score-board.css";
+import { TComponentProps } from "./FunctionalApp";
 //  Where the score is presented
 
-const incorrectCount = 0;
-const correctCount = 0;
-const answersLeft = ["trout", "salmon", "tuna", "shark"];
 
-export function FunctionalScoreBoard() {
+export const  FunctionalScoreBoard: React.FunctionComponent<TComponentProps> =  (props:TComponentProps) => {
+  const incorrectCount = props.incorrectCount;
+  const correctCount = props.correctScore;
+  const answersLeft = ["trout", "salmon", "tuna", "shark"];
   return (
     <div id="score-board">
       <div>Incorrect 🔻: {incorrectCount}</div>
@@ -16,7 +17,7 @@ export function FunctionalScoreBoard() {
           </div>
         ))}
       </div>
-      <div>Correct ✅: {correctCount}</div>
+      <div>Correct ✅: {correctCount} </div>
     </div>
   );
 }
