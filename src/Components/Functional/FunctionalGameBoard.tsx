@@ -26,7 +26,9 @@ const initialFishes = [
 
 
 
-export const FunctionalGameBoard = ({userGuess, setUserGuess}: {userGuess: TComponentProps, setUserGuess: TComponentProps} ) => {
+
+
+export const FunctionalGameBoard = ( ) => {
 
   const [input, setInput] = useState('') 
   const nextFishToName = initialFishes[0];
@@ -37,7 +39,8 @@ export const FunctionalGameBoard = ({userGuess, setUserGuess}: {userGuess: TComp
       </div>
       <form id="fish-guess-form" onSubmit={(e) => {
         e.preventDefault()
-      
+        
+
       }}>
         <label htmlFor="fish-guess">What kind of fish is this?</label>
         <input 
