@@ -1,1 +1,20 @@
-// If you have any types that are SHARED BY MANY COMPONENTS,put them here
+export type TClassProps = {
+  state: {
+    correctCount: number;
+    incorrectCount: number;
+  }
+}
+
+export type TSFish = {
+  name: string;
+  url: string;
+}
+
+
+
+export type TComponentProps = {
+  fishState: {
+    correctScore: number;
+    incorrectScore: number;
+  }
+}

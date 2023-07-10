@@ -1,13 +1,23 @@
 import "./styles/score-board.css";
-import { TComponentProps } from "../../allTypes";
 
-export const  FunctionalScoreBoard: React.FunctionComponent<TComponentProps> =  ({fishState: {correctScore, incorrectScore}}:TComponentProps) => {
-  const answersLeft = ["trout", "salmon", "tuna", "shark"];
+type FunctionalScoreBoardProps = {
+  fishState: {
+    correctScore: number;
+    incorrectScore: number;
+  },
+  answersLeft: string[];
+}
+
+
+export const  FunctionalScoreBoard: React.FunctionComponent<FunctionalScoreBoardProps> = ({ 
+  fishState: {correctScore, incorrectScore}, 
+  answersLeft
+}:FunctionalScoreBoardProps) =>{
   return (
     <div id="score-board">
       <div>Incorrect 🔻: {incorrectScore}</div>
       <div id="choices-left">
-        {answersLeft.slice((correctScore + incorrectScore), answersLeft.length).map((answer) => (
+        {answersLeft.map((answer) => (
           <div key={answer} className="choice">
             {answer}
           </div>

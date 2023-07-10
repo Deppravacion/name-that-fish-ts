@@ -1,5 +1,5 @@
 import "./styles/final-score.css";
-import { TComponentProps } from "../../allTypes";
+import { TComponentProps } from "../../types";
 
 export const FunctionalFinalScore: React.FunctionComponent<TComponentProps> = ({fishState: {correctScore, incorrectScore}}:TComponentProps) => (
   <div id="final-score">

@@ -1,7 +1,7 @@
 import { Component } from "react";
 import "./styles/game-board.css";
 import { Images } from "../../assets/Images";
-import { TClassProps } from "../../allTypes";
+import { TClassProps } from "../../types";
 
 type TCompExtended = {
   handleCount: (name: keyof TClassProps['state'], value: number) => void;

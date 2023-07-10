@@ -1,6 +1,6 @@
 import { Component } from "react";
 import "./styles/score-board.css";
-import { TClassProps } from "../../allTypes";
+import { TClassProps } from "../../types";
 
 const answersLeft = ["trout", "salmon", "tuna", "shark"];
 export class ClassScoreBoard extends Component<TClassProps> {
