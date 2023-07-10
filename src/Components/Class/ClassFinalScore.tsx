@@ -1,17 +1,15 @@
 import { Component } from "react";
+import { TClassProps } from "./ClassApp";
 
-const totalCount = 0;
-const correctCount = 0;
-
-export class ClassFinalScore extends Component {
+export class ClassFinalScore extends Component<TClassProps> {
   render() {
     return (
       <div id="final-score">
         <h1>Your Final Score Was</h1>
         <div id="score">
-          <p>{correctCount}</p>
+          <p>{this.props.state.correctCount}</p>
           <hr />
-          <p>{totalCount}</p>
+          <p>{this.props.state.correctCount + this.props.state.incorrectCount}</p>
         </div>
       </div>
     );

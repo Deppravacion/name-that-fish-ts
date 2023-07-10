@@ -3,8 +3,6 @@ import { Images } from "../../assets/Images";
 import { useState } from "react";
 import { TComponentProps } from "./FunctionalApp";
 
-
-
 const initialFishes = [
   {
     name: "trout",
@@ -31,11 +29,7 @@ type TCompExtended = {
   }) => void;
 } & TComponentProps
 
-
-
-
 export const FunctionalGameBoard: React.FunctionComponent<TCompExtended> = ({fishState, handleScore} ) => {
-
   const [input, setInput] = useState('') 
   const { correctScore, incorrectScore } = fishState
   const nextFishToName = initialFishes[correctScore + incorrectScore];
