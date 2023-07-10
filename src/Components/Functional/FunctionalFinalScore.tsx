@@ -1,17 +1,13 @@
 import "./styles/final-score.css";
 import { TComponentProps } from "./FunctionalApp";
 
-
-
-const correctCount = 0;
-const totalCount = 0;
-export const FunctionalFinalScore: React.FunctionComponent<TComponentProps> = ({correctCount, incorrectCount}: TComponentProps) => (
+export const FunctionalFinalScore: React.FunctionComponent<TComponentProps> = ({fishState: {correctScore, incorrectScore}}:TComponentProps) => (
   <div id="final-score">
     <h1>Your Final Score Was</h1>
     <div id="score">
-      <p>{correctCount}</p>
+      <p>{correctScore}</p>
       <hr />
-      <p>{+correctCount + +incorrectCount}</p>
+      <p>{(correctScore + incorrectScore)}</p>
     </div>
-  </div>
+  </div>  
 );

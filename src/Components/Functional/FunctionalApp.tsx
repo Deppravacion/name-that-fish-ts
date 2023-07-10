@@ -27,19 +27,21 @@ export function FunctionalApp() {
     <>
       { total < 4 && 
         < FunctionalScoreBoard 
-        fishState={fishState}
+          fishState={fishState}
         />
       }
       { total < 4 && 
         < FunctionalGameBoard 
-        handleScore={(fishState) => {
-          setFishState(fishState)
-        }}
+          fishState={fishState}
+          handleScore={(fishState) => {
+            setFishState(fishState)
+          }}
         />
         
       }
       {total == 4 && 
         <FunctionalFinalScore 
+          fishState={fishState}
 
         />}
     </>
