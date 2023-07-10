@@ -24,22 +24,40 @@ const initialFishes = [
   },
 ];
 
+type TCompExtended = {
+  handleScore: (fishState: {
+    correctScore: number;
+    incorrectScore: number;
+  }) => void;
+} & TComponentProps
 
 
 
 
-export const FunctionalGameBoard = ( ) => {
+export const FunctionalGameBoard: React.FunctionComponent<TCompExtended> = ({fishState, handleScore} ) => {
 
   const [input, setInput] = useState('') 
-  const nextFishToName = initialFishes[0];
+  const { correctScore, incorrectScore } = fishState
+  const nextFishToName = initialFishes[correctScore + incorrectScore];
   return (
     <div id="game-board">
       <div id="fish-container">
         <img src={nextFishToName.url} alt={nextFishToName.name} />
       </div>
       <form id="fish-guess-form" onSubmit={(e) => {
-        e.preventDefault()
-        
+        e.preventDefault()          
+        if (input == nextFishToName.name) {
+          handleScore({
+            correctScore: (correctScore + 1),
+            incorrectScore: incorrectScore,
+          })
+        } else {
+          handleScore({
+            correctScore: correctScore,
+            incorrectScore:  (incorrectScore + 1), 
+          })            
+        }
+        setInput('')
 
       }}>
         <label htmlFor="fish-guess">What kind of fish is this?</label>
@@ -47,14 +65,12 @@ export const FunctionalGameBoard = ( ) => {
           type="text" 
           name="fish-guess"  
           onChange={(e) =>  {
-            setInput(e.target.value)} 
-           
+            setInput(e.target.value)}            
           } 
           value={input}
           />
         <input type="submit" />
       </form>
-      <h1> input: {input} </h1>
     </div>
   );
 }

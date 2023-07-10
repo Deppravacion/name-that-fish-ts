@@ -10,6 +10,7 @@ export type TComponentProps = {
     correctScore: number;
     incorrectScore: number;
   }
+
 }
 
 
