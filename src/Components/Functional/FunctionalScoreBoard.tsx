@@ -1,5 +1,5 @@
 import "./styles/score-board.css";
-import { TComponentProps } from "./FunctionalApp";
+import { TComponentProps } from "../../allTypes";
 
 export const  FunctionalScoreBoard: React.FunctionComponent<TComponentProps> =  ({fishState: {correctScore, incorrectScore}}:TComponentProps) => {
   const answersLeft = ["trout", "salmon", "tuna", "shark"];

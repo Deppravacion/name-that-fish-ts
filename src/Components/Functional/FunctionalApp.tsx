@@ -3,12 +3,8 @@ import { FunctionalScoreBoard } from "./FunctionalScoreBoard";
 import { FunctionalFinalScore } from "./FunctionalFinalScore";
 import { useState } from "react";
 
-export type TComponentProps = {
-  fishState: {
-    correctScore: number;
-    incorrectScore: number;
-  }
-}
+
+
 
 export function FunctionalApp() {
   const [ fishState, setFishState] = useState({

@@ -1,11 +1,10 @@
 import { Component } from "react";
 import "./styles/score-board.css";
-import { TClassProps } from "./ClassApp";
+import { TClassProps } from "../../allTypes";
 
 const answersLeft = ["trout", "salmon", "tuna", "shark"];
 export class ClassScoreBoard extends Component<TClassProps> {
   render() {
-    console.log(this.props);
     
     return (
       <div id="score-board">

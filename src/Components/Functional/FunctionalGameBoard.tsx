@@ -1,7 +1,7 @@
 import "./styles/game-board.css";
 import { Images } from "../../assets/Images";
 import { useState } from "react";
-import { TComponentProps } from "./FunctionalApp";
+import { TComponentProps } from "../../allTypes";
 
 const initialFishes = [
   {

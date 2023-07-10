@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { TClassProps } from "./ClassApp";
+import { TClassProps } from "../../allTypes";
 
 export class ClassFinalScore extends Component<TClassProps> {
   render() {

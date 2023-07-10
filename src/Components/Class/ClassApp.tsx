@@ -2,15 +2,9 @@ import { Component } from "react";
 import { ClassScoreBoard } from "./ClassScoreBoard";
 import { ClassGameBoard } from "./ClassGameBoard";
 import { ClassFinalScore } from "./ClassFinalScore";
+import { TClassProps } from "../../allTypes";
 
-export type TClassProps = {
-  state: {
-    correctCount: number;
-    incorrectCount: number;
-  }
-}
-
-export class ClassApp extends Component<{}, TClassProps['state']> {
+export class ClassApp extends Component<TClassProps> {
   state = {
     incorrectCount: 0,
     correctCount: 0,
@@ -43,7 +37,8 @@ export class ClassApp extends Component<{}, TClassProps['state']> {
         {total == 4 && 
           <ClassFinalScore 
             state={this.state}
-            />}
+          />
+        }
       </>
     );
     
