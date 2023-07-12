@@ -28,20 +28,16 @@ export function FunctionalApp() {
     correctScore: 0,
     incorrectScore: 0,
   })
-
   const total: number = fishState.correctScore + fishState.incorrectScore
   const answersLeft = initialFishes
     .slice(total, initialFishes.length)
     .map((fish) => fish.name)
-
   const handleScore = (fishName: string ) => {
     const arrValuesToAdd = fishName === initialFishes[total].name ? [1, 0 ] : [0, 1]
     setFishState({
       correctScore: fishState.correctScore + arrValuesToAdd[0],
       incorrectScore: fishState.incorrectScore + arrValuesToAdd[1]
     })
-
-
   }
   return (
     <>
@@ -52,7 +48,6 @@ export function FunctionalApp() {
             answersLeft={answersLeft}
           />
           < FunctionalGameBoard 
-            // fishState={fishState} //refakktor
             fishData={initialFishes[total]}
             handleScore={handleScore}
           />
@@ -61,7 +56,6 @@ export function FunctionalApp() {
       {total == 4 && 
         <FunctionalFinalScore 
           fishState={fishState}
-
         />}
     </>
   );

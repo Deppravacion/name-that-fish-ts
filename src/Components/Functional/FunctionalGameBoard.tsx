@@ -2,13 +2,12 @@ import "./styles/game-board.css";
 import { useState } from "react";
 import { TSFish } from "../../types";
 
-
 type TCompExtended = {
   fishData: TSFish
   handleScore: (fishName: string) => void;
 }
 
-export const FunctionalGameBoard: React.FunctionComponent<TCompExtended> = ({fishData, handleScore} ) => {
+export const FunctionalGameBoard: React.FunctionComponent<TCompExtended> = ({ fishData, handleScore} ) => {
   const [input, setInput] = useState('') 
   return (
     <div id="game-board">
