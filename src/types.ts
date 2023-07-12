@@ -10,8 +10,6 @@ export type TSFish = {
   url: string;
 }
 
-
-
 export type TComponentProps = {
   fishState: {
     correctScore: number;

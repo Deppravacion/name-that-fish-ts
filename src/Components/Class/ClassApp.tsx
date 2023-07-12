@@ -2,7 +2,8 @@ import { Component } from "react";
 import { ClassScoreBoard } from "./ClassScoreBoard";
 import { ClassGameBoard } from "./ClassGameBoard";
 import { ClassFinalScore } from "./ClassFinalScore";
-import { TClassProps } from "../../allTypes";
+import { TClassProps } from "../../types";
+import { initialFishes } from './fishData'
 
 export class ClassApp extends Component<TClassProps> {
   state = {
@@ -10,27 +11,40 @@ export class ClassApp extends Component<TClassProps> {
     correctCount: 0,
   };
 
-  changeState = (name: keyof TClassProps['state'], state: number): void => {
+  changeState = (key: keyof TClassProps['state'], state: number): void => {
     this.setState((prev) => ({
       ...prev,
-      [name]: state
+      [key]: state
     }))
   }
-
+  
+  handleCount = (fishName: string) => {
+    const keyToUpdate = fishName === initialFishes[(this.state.correctCount + this.state.incorrectCount)].name 
+      ? `correctCount` 
+      : `incorrectCount`
+    this.changeState(keyToUpdate, this.state[keyToUpdate] + 1)
+  }
+  
   render() {
-    const total: number = this.state.correctCount + this.state.incorrectCount
+    const total: number = this.state.correctCount + this.state.incorrectCount   
+    const answersLeft = initialFishes
+      .slice(total, initialFishes.length)
+      .map((fish) => fish.name)
+
     return (
       <>
         <>
         { total < 4 &&
           <ClassScoreBoard 
           state={this.state}
+          answersLeft={answersLeft}
           />
         }
         { total < 4 &&
           <ClassGameBoard
-          state={this.state}
-          handleCount={this.changeState}
+          // state={this.state}
+          fishData={initialFishes[this.state.correctCount + this.state.incorrectCount]}
+          handleCount={this.handleCount}
           />
         }
         </>

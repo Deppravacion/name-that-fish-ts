@@ -23,7 +23,6 @@ const initialFishes = [
   },
 ];
 
-
 export function FunctionalApp() {
   const [ fishState, setFishState] = useState({
     correctScore: 0,

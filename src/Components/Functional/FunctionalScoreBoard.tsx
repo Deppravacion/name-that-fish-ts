@@ -8,7 +8,6 @@ type FunctionalScoreBoardProps = {
   answersLeft: string[];
 }
 
-
 export const  FunctionalScoreBoard: React.FunctionComponent<FunctionalScoreBoardProps> = ({ 
   fishState: {correctScore, incorrectScore}, 
   answersLeft
